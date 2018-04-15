@@ -1,4 +1,4 @@
 FROM archlinux/base
 
-RUN pacman -Syu --no-confirm
-RUN pacman -S ansible --no-confirm
+RUN pacman -Syu --noconfirm
+RUN pacman -S ansible --noconfirm
