@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - { role: base, tags: ['base'] }
+    - { role: base-dev, tags: ['base-dev'] }
+    - { role: extra, ['extra'] }
+    - { role: desktop-environment, ['desktop-environment']}
+    - { role: yaourt, ['yaourt'] }
