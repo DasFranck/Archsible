@@ -4,6 +4,9 @@
     src: /etc/pacman.d/mirrorlist
     dest: /etc/pacman.d/mirrorlist.backup
 
+- name: Rank pacman's mirrors
+  shell: rankmirrors -n 20 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+
 - name: pacman -Syu
   pacman:
     update_cache: yes
