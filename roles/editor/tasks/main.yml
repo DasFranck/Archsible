@@ -1,0 +1,8 @@
+---
+- name: Install vim and neovim
+  pacman: name={{ item }} state=present
+  with_items:
+    - vim
+    - neovim
+    - python-neovim
+    - python-jedi
