@@ -1,0 +1,19 @@
+---
+- name: Backup pacman's mirrorlist
+  copy:
+    src: /etc/pacman.d/mirrorlist
+    dest: /etc/pacman.d/mirrorlist.backup
+
+- name: pacman -Syu
+  pacman:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install zsh, man, htop, curl, vim
+  pacman: name={{ item }} state=present
+  with_items:
+    - man
+    - htop
+    - curl
+    - tmux
+    - vim
