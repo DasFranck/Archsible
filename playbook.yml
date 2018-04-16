@@ -3,7 +3,15 @@
   become: yes
   roles:
     - { role: base, tags: ['base'] }
-    - { role: base-dev, tags: ['base-dev'] }
-    - { role: extra, ['extra'] }
-    - { role: desktop-environment, ['desktop-environment']}
-    - { role: yaourt, ['yaourt'] }
+    - { role: ohmyzsh, tags: ['ohmyzsh'] }
+    # Editor ([n]vim/vsc)
+    - { role: editor, tags: ['editor'] }
+#    - { role: base-dev, tags: ['base-dev'] }
+#    - { role: extra, tags: ['extra'] }
+#    - { role: desktop-environment, tags: ['desktop-environment'] }
+    - { role: yaourt, tags: ['yaourt'] }
+  vars_prompt:
+    - name: user_name
+      prompt: "Enter desired user name"
+    - name: user_password
+      prompt: "Enter desired user password"
