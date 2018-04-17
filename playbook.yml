@@ -3,15 +3,20 @@
   become: yes
   roles:
     - { role: base, tags: ['base'] }
+    - { role: yaourt, tags: ['yaourt'] }
+    - { role: useradd, tags: ['useradd'] }
     - { role: ohmyzsh, tags: ['ohmyzsh'] }
-    # Editor ([n]vim/vsc)
-    - { role: editor, tags: ['editor'] }
+    - { role: vim, tags: ['vim'] }
 #    - { role: base-dev, tags: ['base-dev'] }
 #    - { role: extra, tags: ['extra'] }
 #    - { role: desktop-environment, tags: ['desktop-environment'] }
-    - { role: yaourt, tags: ['yaourt'] }
   vars_prompt:
     - name: user_name
       prompt: "Enter desired user name"
+      private: no
     - name: user_password
       prompt: "Enter desired user password"
+      private: yes
+      confirm: yes
+      salt_size: 7
+      encrypt: "sha512_crypt"
