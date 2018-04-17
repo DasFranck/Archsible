@@ -1,0 +1,14 @@
+---
+- name: Add user named {{ user_name }}
+  user:
+    name: "{{ user_name }}"
+    group: users
+    groups: wheel, users
+    append: yes
+    shell: /bin/zsh
+    home: /home/{{ user_name }}
+    generate_ssh_key: yes
+    ssh_key_type: rsa
+    ssh_key_bits: 2048
+    ssh_key_file: .ssh/id_rsa
+    password: "{{ user_password }}"
