@@ -4,8 +4,20 @@
     src: /etc/pacman.d/mirrorlist
     dest: /etc/pacman.d/mirrorlist.backup
 
+- name: Get latest mirrorlist FR/DE/GB
+  get_url:
+    url: https://www.archlinux.org/mirrorlist/?country=FR&country=DE&country=GB&protocol=http&protocol=https&ip_version=4
+    dest: /etc/pacman.d/mirrorlist.ansible
+    force: yes
+
+- name: Uncomment mirrors
+  replace:
+    path: /etc/pacman.d/mirrorlist.ansible
+    regexp: ^#Server
+    replace: Server
+
 - name: Rank pacman's mirrors
-  shell: rankmirrors -n 20 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+  shell: rankmirrors /etc/pacman.d/mirrorlist.ansible > /etc/pacman.d/mirrorlist
 
 - name: pacman -Syu
   pacman:
@@ -15,8 +27,9 @@
 - name: Install zsh, man, htop, curl, vim
   pacman: name={{ item }} state=present
   with_items:
-    - man
+    - man-db
     - htop
     - curl
     - tmux
     - vim
+    - openssh
