@@ -3,10 +3,11 @@
   become: yes
   roles:
     - { role: base, tags: ['base'] }
-    - { role: yaourt, tags: ['yaourt'] }
+    - { role: yay, tags: ['yay'] }
     - { role: useradd, tags: ['useradd'] }
     - { role: ohmyzsh, tags: ['ohmyzsh'] }
     - { role: vim, tags: ['vim'] }
+    - { role: vscode, tags: ['vscode']}
 #    - { role: base-dev, tags: ['base-dev'] }
 #    - { role: extra, tags: ['extra'] }
 #    - { role: desktop-environment, tags: ['desktop-environment'] }
