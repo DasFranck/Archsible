@@ -1,0 +1,35 @@
+---
+- name: "Install makepkg, git, gcc and go"
+  pacman: name={{item}} state=present
+  with_items:
+    - make
+    - git
+    - go
+    - gcc
+    - base-devel
+
+- name: "Clone yay"
+  git:
+    repo: 'https://github.com/Jguer/yay'
+    dest: /tmp/yay_build
+  
+- name: "Make yay"
+  make:
+    chdir: /tmp/yay_build
+
+- name: "Install yay"
+  make:
+    chdir: /tmp/yay_build
+    target: install
+
+- name: "Add aur user"
+  user:
+    name: aur
+    group: wheel
+
+- name: "Add aur in sudoers"
+  lineinfile:
+    path: /etc/sudoers.d/11-install-aur
+    line: 'aur ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+    create: yes
+    validate: 'visudo -cf %s'
