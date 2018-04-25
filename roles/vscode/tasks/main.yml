@@ -1,0 +1,24 @@
+---
+- name: Install vscode
+  aur: name=code use=yay skip_installed=yes
+  become: yes
+  become_user: aur
+
+- name: Install vscode extensions
+  command: code-oss --install-extension {{item}} 
+  become: yes
+  become_user: "{{ user_name }}"
+  with_items:
+  - vscoss.vscode-ansible
+  - haaaad.ansible
+  - icrawl.discord-vscode
+  - PeterJausovec.vscode-docker
+  - donjayamanne.githistory
+  - codezombiech.gitignore
+  - dasfranck.jellybeans
+  - wholroyd.jinja
+  - christian-kohler.path-intellisense
+  - ms-python.python
+  - vscodevim.vim
+  - wayou.vscode-todo-highlight
+  - robertohuertasm.vscode-icons
