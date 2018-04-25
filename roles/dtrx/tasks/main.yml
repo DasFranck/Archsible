@@ -1,0 +1,15 @@
+---
+- name: Install dtrx
+  aur: name=dtrx skip_installed=yes
+  become: yes
+  become_user: aur
+
+- name: Install optionnal dependencies 
+  pacman: name={{ item }} status=present
+  with_items:
+  - p7zip
+  - tar
+  - unzip
+  - unrar
+  - gzip
+  - bzip2
