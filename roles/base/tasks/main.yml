@@ -24,12 +24,13 @@
     update_cache: yes
     upgrade: yes
 
-- name: Install zsh, man, htop, curl, vim
+- name: Install zsh, man, htop, curl, tmux, vim, which, openssh and tar
   pacman: name={{ item }} state=present
   with_items:
-    - man-db
+    - base
     - htop
     - curl
     - tmux
     - vim
+    - sudo
     - openssh
