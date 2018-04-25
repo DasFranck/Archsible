@@ -1,17 +1,9 @@
 CLI tools
 - syncthing
-- lynx
+- links
 - ranger
 - ncdu
-
-DTRX (Deps yaourt)
-- dtrx
-- p7zip
-- tar
-- unzip
-- unrar
-- gzip
-- bzip2
+- tree
 
 DEV
 - docker
@@ -19,7 +11,9 @@ DEV
 
 PYTHON
 - python
+- python-pip
 - ipython
+- pylint
 
 WM + X apps
 - sddm
@@ -31,6 +25,7 @@ WM + X apps
 - firefox
 - dolphin
 - terminology
+- keepass
 
 VSC
 - vsc
@@ -50,6 +45,9 @@ MULTIMEDIA
 - clementine
 - audacity
 - libreoffice
+- digikam
+- hugin
+- pavucontrol
 
 LAPTOP
 - hp-tools (opt)
