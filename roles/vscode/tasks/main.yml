@@ -1,4 +1,5 @@
 ---
+# Maybe broken because of gulp (https://aur.archlinux.org/packages/code/)
 - name: Install vscode
   aur: name=code use=yay skip_installed=yes
   become: yes

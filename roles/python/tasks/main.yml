@@ -1,0 +1,15 @@
+---
+- name: Install python 3 and python-pip
+  pacman: name={{ item }} state=present
+  with_items:
+    - python
+    - python-pip
+
+- name: Install itpyhon
+  pip:
+    name: "{{ item }}"
+    executable: pip-3
+  with_items:
+    - ipython
+    - virtualenv
+    - flake8

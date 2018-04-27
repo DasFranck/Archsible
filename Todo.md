@@ -1,7 +1,6 @@
-DEV
+DOCKER
 - docker
 - ctop
-- gcc
 
 PYTHON
 - python
@@ -20,9 +19,6 @@ WM + X apps
 - dolphin
 - terminology
 - keepass
-
-VSC
-- vsc
 
 GAMES
 - steam

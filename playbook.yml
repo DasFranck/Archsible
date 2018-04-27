@@ -3,13 +3,15 @@
   become: yes
   roles:
     - { role: base, tags: ['base'] }
-    - { role: yay, tags: ['yay'] }
+    - { role: yay, tags: ['yay', 'aur'] }
     - { role: useradd, tags: ['useradd'] }
     - { role: ohmyzsh, tags: ['ohmyzsh'] }
     - { role: vim, tags: ['vim'] }
-    - { role: vscode, tags: ['vscode']}
-#    - { role: base-dev, tags: ['base-dev'] }
+    - { role: python, tags: ['python'] }
+#    - { role: docker, tags: ['docker'] }
+#    - { role: vscode, tags: ['vscode']}
 #    - { role: extra, tags: ['extra'] }
+    - { role: dtrx, tags: ['dtrx']}
 #    - { role: desktop-environment, tags: ['desktop-environment'] }
   vars_prompt:
     - name: user_name
