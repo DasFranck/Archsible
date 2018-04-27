@@ -1,12 +1,6 @@
-CLI tools
-- syncthing
-- links
-- ranger
-- ncdu
-- tree
-
 DEV
 - docker
+- ctop
 - gcc
 
 PYTHON
