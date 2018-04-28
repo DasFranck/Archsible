@@ -5,7 +5,7 @@
     - python
     - python-pip
 
-- name: Install itpyhon
+- name: Install ipython
   pip:
     name: "{{ item }}"
     executable: pip-3
