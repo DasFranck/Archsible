@@ -1,0 +1,5 @@
+---
+- name: Clone dotfiles
+  git:
+    repo: https://github.com/dasfranck/DasDotFiles
+    dest: /tmp/dotfiles
