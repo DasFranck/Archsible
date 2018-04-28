@@ -11,6 +11,7 @@
 #    - { role: docker, tags: ['docker'] }
 #    - { role: vscode, tags: ['vscode']}
 #    - { role: extra, tags: ['extra'] }
+    - { role: clitools, tags: ['clitools'] }
     - { role: dtrx, tags: ['dtrx']}
 #    - { role: desktop-environment, tags: ['desktop-environment'] }
   vars_prompt:

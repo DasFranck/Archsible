@@ -8,14 +8,20 @@ PYTHON
 - ipython
 - pylint
 
-WM + X apps
+WM
 - sddm
 - i3-gaps
-- (fonts)
+- MesloLGMDZ Nerd Font Mono
 - i3lock/slimlock
 - conky
+- compton
+- feh
 - polybar
+- rofi
+
+X apps
 - firefox
+- syncthing
 - dolphin
 - terminology
 - keepass
