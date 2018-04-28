@@ -30,7 +30,6 @@
     - base
     - htop
     - curl
-    - tmux
     - vim
     - sudo
     - openssh
