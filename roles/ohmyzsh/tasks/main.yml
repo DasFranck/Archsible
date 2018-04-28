@@ -13,15 +13,15 @@
 
 - name: Cloning oh-my-zsh
   git:
-    repo=https://github.com/robbyrussell/oh-my-zsh
-    dest=/home/{{ user_name }}/.oh-my-zsh
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: /home/{{ user_name }}/.oh-my-zsh
   when: 'installation is success'
   register: cloning
   sudo: no
 
 - name: Creating new ~/.zshrc
   copy:
-    src=/home/{{ user_name }}/.oh-my-zsh/templates/zshrc.zsh-template
-    dest=/home/{{ user_name }}/.zshrc
+    src: /home/{{ user_name }}/.oh-my-zsh/templates/zshrc.zsh-template
+    dest: /home/{{ user_name }}/.zshrc
   when: 'cloning is success'
   sudo: no
