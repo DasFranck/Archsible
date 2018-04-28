@@ -5,10 +5,10 @@
     - python
     - python-pip
 
-- name: Install ipython
+- name: Install ipython, virtualenv and flake8
   pip:
     name: "{{ item }}"
-    executable: pip-3
+    executable: pip #Meant to be pip-3 on arch
   with_items:
     - ipython
     - virtualenv
