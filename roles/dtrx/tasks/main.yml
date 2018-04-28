@@ -5,7 +5,7 @@
   become_user: aur
 
 - name: Install optionnal dependencies 
-  pacman: name={{ item }} status=present
+  pacman: name={{ item }} state=present
   with_items:
   - p7zip
   - tar
