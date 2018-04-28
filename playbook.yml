@@ -3,16 +3,17 @@
   become: yes
   roles:
     - { role: base, tags: ['base'] }
+    - { role: clitools, tags: ['clitools'] }
+    - { role: dotfiles, tags: ['dotfiles']}
     - { role: yay, tags: ['yay', 'aur'] }
     - { role: useradd, tags: ['useradd'] }
     - { role: ohmyzsh, tags: ['ohmyzsh'] }
     - { role: python, tags: ['python'] }
-    - { role: vim, tags: ['vim'] }
+    - { role: vim, tags: ['vim'] } #Deps: dotfiles, python
 #    - { role: docker, tags: ['docker'] }
-#    - { role: vscode, tags: ['vscode']}
+#    - { role: vscode, tags: ['vscode']} #Deps: yay, dotfiles
 #    - { role: extra, tags: ['extra'] }
-    - { role: clitools, tags: ['clitools'] }
-    - { role: dtrx, tags: ['dtrx']}
+    - { role: dtrx, tags: ['dtrx']} #Deps: yay
   vars_prompt:
     - name: user_name
       prompt: "Enter desired user name"
