@@ -6,14 +6,13 @@
     - { role: yay, tags: ['yay', 'aur'] }
     - { role: useradd, tags: ['useradd'] }
     - { role: ohmyzsh, tags: ['ohmyzsh'] }
-    - { role: vim, tags: ['vim'] }
     - { role: python, tags: ['python'] }
+    - { role: vim, tags: ['vim'] }
 #    - { role: docker, tags: ['docker'] }
 #    - { role: vscode, tags: ['vscode']}
 #    - { role: extra, tags: ['extra'] }
     - { role: clitools, tags: ['clitools'] }
     - { role: dtrx, tags: ['dtrx']}
-#    - { role: desktop-environment, tags: ['desktop-environment'] }
   vars_prompt:
     - name: user_name
       prompt: "Enter desired user name"
