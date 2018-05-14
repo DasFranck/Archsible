@@ -7,7 +7,7 @@
     - { role: dotfiles, tags: ['dotfiles']}
     - { role: yay, tags: ['yay', 'aur'] }
     - { role: useradd, tags: ['useradd'] }
-    - { role: ohmyzsh, tags: ['ohmyzsh'] }
+    - { role: ohmyzsh, tags: ['ohmyzsh'] } #Deps: dotfiles
     - { role: python, tags: ['python'] }
     - { role: vim, tags: ['vim'] } #Deps: dotfiles, python
 #    - { role: docker, tags: ['docker'] }
