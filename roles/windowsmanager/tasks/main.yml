@@ -20,7 +20,7 @@
 - name: Get Meslo LG M DZ Mono font
   get_url:
     url: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Meslo/M-DZ/complete/Meslo%20LG%20M%20DZ%20Regular%20Nerd%20Font%20Complete%20Mono.otf
-    dest: /usr/share/fonts/MLG.otf
+    dest: /home/{{ user_name }}/.local/share/fonts/MLG.otf
 
 #TODO CONFIG SDDM
 
