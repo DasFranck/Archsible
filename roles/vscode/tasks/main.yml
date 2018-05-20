@@ -1,5 +1,8 @@
 ---
-# Maybe broken because of gulp (https://aur.archlinux.org/packages/code/)
+# gulp (https://aur.archlinux.org/packages/code/)
+- name: ulimit (damn gulp)
+  command: ulimit -n 65535
+
 - name: Install vscode
   aur: name=code use=yay skip_installed=yes
   become: yes
