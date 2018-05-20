@@ -1,4 +1,7 @@
 ---
+- name: Install git
+  pacman: name=git state=present
+
 - name: Clone dotfiles
   git:
     repo: https://github.com/dasfranck/DasDotFiles
