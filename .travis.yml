@@ -15,6 +15,5 @@ before_install:
   - 'sudo docker build --no-cache --rm --file=travis/Dockerfile --tag=${name} travis'
 
 script:
-  - container_id=$(mktemp)
   - 'sudo docker run -e ANSIBLE_FORCE_COLOR=1 --privileged --volume="${PWD}":/home/ansible:ro ${name} ansible-playbook -vvv /home/ansible/playbook.yml --syntax-check -i ./localhost'
   - 'sudo docker run -e ANSIBLE_FORCE_COLOR=1 --privileged --volume="${PWD}":/home/ansible:ro ${name} ansible-playbook -vvv /home/ansible/playbook.yml -i ./localhost -e user_name=dasfranck -e user_password=test'
