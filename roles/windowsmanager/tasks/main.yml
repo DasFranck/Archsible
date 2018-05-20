@@ -1,0 +1,31 @@
+---
+- name: Install packages from official repos
+  pacman: name={{ item }} state=present
+  with_items:
+    - sddm
+    - i3-gaps
+    - i3lock/slimlock
+    - conky
+    - compton
+    - feh
+    - rofi
+
+- name: Install polybar from AUR
+  aur: name={{ item }} use=yay skip_installed=yes
+  with_items:
+    - polybar
+  become: yes
+  become_user: aur
+
+- name: Get Meslo LG M DZ Mono font
+  get_url:
+    url: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Meslo/M-DZ/complete/Meslo%20LG%20M%20DZ%20Regular%20Nerd%20Font%20Complete%20Mono.otf
+    dest: /usr/share/fonts/MLG.otf
+
+#TODO CONFIG SDDM
+#TODO CONFIG I3-GAPS
+#TODO CONFIG SLIMLOCK
+#TODO CONFIG CONKY
+#TODO CONFIG FEH
+#TODO CONFIG POLYBAR
+#TODO CONFIG ROFI

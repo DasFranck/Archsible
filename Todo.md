@@ -8,17 +8,6 @@ PYTHON
 - ipython
 - pylint
 
-WM
-- sddm
-- i3-gaps
-- MesloLGMDZ Nerd Font Mono
-- i3lock/slimlock
-- conky
-- compton
-- feh
-- polybar
-- rofi
-
 X apps
 - firefox
 - syncthing
