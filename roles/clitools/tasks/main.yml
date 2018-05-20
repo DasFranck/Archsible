@@ -5,6 +5,15 @@
     - ranger
     - ncdu
     - tree
-    - git
     - tmux
     - neofetch
+
+- name: Copy git configuration
+  copy:
+    src: /tmp/dotfiles/.gitconfig
+    dest: /home/{{ user_name }}/.gitconfig
+
+- name: Copy tmux configuration
+  copy:
+    src: /tmp/dotfiles/.tmux.conf
+    dest: /home/{{ user_name }}/.tmux.conf
