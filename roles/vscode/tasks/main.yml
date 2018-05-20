@@ -26,3 +26,8 @@
   - vscodevim.vim
   - wayou.vscode-todo-highlight
   - robertohuertasm.vscode-icons
+
+- name: Copy vscode configuration
+  copy:
+    src: /tmp/dotfiles/.config/Code - OSS
+    dest: /home/{{ user_name }}/.config/Code - OSS
