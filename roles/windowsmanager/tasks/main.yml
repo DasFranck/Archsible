@@ -4,11 +4,11 @@
   with_items:
     - sddm
     - i3-gaps
-    - i3lock/slimlock
     - conky
     - compton
     - feh
     - rofi
+#    - i3lock/slimlock
 
 - name: Install polybar from AUR
   aur: name={{ item }} use=yay skip_installed=yes
