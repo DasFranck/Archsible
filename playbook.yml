@@ -4,13 +4,14 @@
   roles:
     - { role: base, tags: ['base'] }
     - { role: yay, tags: ['yay', 'aur'] }
-    - { role: clitools, tags: ['clitools'] }
+    - { role: dotfiles, tags: ['dotfiles'] }
+    - { role: clitools, tags: ['clitools'] } #Deps: dotfiles
     - { role: dtrx, tags: ['dtrx']} #Deps: yay
-    - { role: dotfiles, tags: ['dotfiles']}
     - { role: useradd, tags: ['useradd'] }
     - { role: ohmyzsh, tags: ['ohmyzsh'] } #Deps: dotfiles
     - { role: python, tags: ['python'] }
     - { role: vim, tags: ['vim'] } #Deps: dotfiles, python
+    - { role: windowsmanager, tags: ['windowsmanager'] } #Deps: dotfiles
 #    - { role: docker, tags: ['docker'] }
 #    - { role: extra, tags: ['extra'] }
 #    - { role: vscode, tags: ['vscode']} #Deps: yay, dotfiles
