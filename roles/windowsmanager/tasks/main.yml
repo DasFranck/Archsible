@@ -31,7 +31,7 @@
 
 #TODO CONFIG SLIMLOCK
 
-- name: Copy i3 configuration
+- name: Copy conky configuration
   copy:
     src: /tmp/dotfiles/.conkyrc
     dest: /home/{{ user_name }}/.conkyrc

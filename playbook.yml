@@ -4,17 +4,17 @@
   roles:
     - { role: base, tags: ['base'] }
     - { role: yay, tags: ['yay', 'aur'] }
-    - { role: dotfiles, tags: ['dotfiles'] }
-    - { role: clitools, tags: ['clitools'] } #Deps: dotfiles
-    - { role: dtrx, tags: ['dtrx']} #Deps: yay
     - { role: useradd, tags: ['useradd'] }
-    - { role: ohmyzsh, tags: ['ohmyzsh'] } #Deps: dotfiles
+    - { role: dotfiles, tags: ['dotfiles'] }
+    - { role: clitools, tags: ['clitools'] } #Deps: dotfiles, useradd
+    - { role: dtrx, tags: ['dtrx']} #Deps: yay
+    - { role: ohmyzsh, tags: ['ohmyzsh'] } #Deps: dotfiles, useradd
     - { role: python, tags: ['python'] }
-    - { role: vim, tags: ['vim'] } #Deps: dotfiles, python
-    - { role: windowsmanager, tags: ['windowsmanager'] } #Deps: dotfiles
+    - { role: vim, tags: ['vim'] } #Deps: dotfiles, useradd, python
+    - { role: windowsmanager, tags: ['windowsmanager'] } #Deps: dotfiles, useradd
 #    - { role: docker, tags: ['docker'] }
 #    - { role: extra, tags: ['extra'] }
-#    - { role: vscode, tags: ['vscode']} #Deps: yay, dotfiles
+#    - { role: vscode, tags: ['vscode']} #Deps: yay, dotfiles, useradd
   vars_prompt:
     - name: user_name
       prompt: "Enter desired user name"
@@ -25,3 +25,5 @@
       confirm: yes
       salt_size: 7
       encrypt: "sha512_crypt"
+
+#TODO: Put deps in roles' metadata
