@@ -23,9 +23,26 @@
     dest: /usr/share/fonts/MLG.otf
 
 #TODO CONFIG SDDM
-#TODO CONFIG I3-GAPS
+
+- name: Copy i3 configuration
+  copy:
+    src: /tmp/dotfiles/.i3
+    dest: /home/{{ user_name }}/.i3
+
 #TODO CONFIG SLIMLOCK
-#TODO CONFIG CONKY
-#TODO CONFIG FEH
-#TODO CONFIG POLYBAR
-#TODO CONFIG ROFI
+
+- name: Copy i3 configuration
+  copy:
+    src: /tmp/dotfiles/.conkyrc
+    dest: /home/{{ user_name }}/.conkyrc
+
+- name: Copy polybar configuration
+  copy:
+    src: /tmp/dotfiles/.config/polybar
+    dest: /home/{{ user_name }}/.config/polybar
+
+- name: Set rofi theme to sidebar
+  lineinfile:
+    create: yes
+    path: /home/{{ user_name }}/.config/rofi/config
+    line: "rofi.theme: /usr/share/rofi/themes/sidebar.rasi"
