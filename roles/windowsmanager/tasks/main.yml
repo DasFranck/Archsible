@@ -36,11 +36,9 @@
     backup: yes
 
 - name: Set lightdm greeter theme to litarvan
-  replace:
-    path: /etc/lightdm/lightdm-webkit2-greeter.conf
-    regexp: 'webkit_theme.*=.+$'
-    replace: 'webkit_theme=litarvan'
-    backup: yes
+  copy:
+    src: /tmp/dotfiles/etc/lightdm/lightdm-webkit2-greeter.conf
+    dest: /etc/lightdm/lightdm-webkit2-greeter.conf
 
 - name: Rank pacman's mirrors
   shell: rankmirrors /etc/pacman.d/mirrorlist.ansible > /etc/pacman.d/mirrorlist
