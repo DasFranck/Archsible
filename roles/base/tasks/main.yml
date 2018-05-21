@@ -41,6 +41,9 @@
     - sudo
     - openssh
 
-- name: Install acpi if laptop tag
-  pacman: name=acpi state=present
+- name: Install acpi and networkmanager if laptop tag
+  pacman: name={{ item }} state=present
+  with_items:
+    - acpi
+    - networkmanager
   tags: laptop
