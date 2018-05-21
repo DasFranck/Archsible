@@ -7,3 +7,6 @@
     - dolphin
     - terminology
     - keepassx2
+
+- name: Enable syncthing
+  shell: systemctl enable syncthing@{{ user_name }}
