@@ -40,10 +40,12 @@
     - vim
     - sudo
     - openssh
+    - openvpn
 
 - name: Install acpi and networkmanager if laptop tag
   pacman: name={{ item }} state=present
   with_items:
     - acpi
     - networkmanager
+    - networkmanager-openvpn
   tags: laptop
