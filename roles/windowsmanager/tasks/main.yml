@@ -16,6 +16,7 @@
     - polybar
   become: yes
   become_user: aur
+  tags: aur
 
 - name: Create /home/{{ user_name }}/.local/share/fonts/
   file:

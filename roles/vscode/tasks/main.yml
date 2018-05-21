@@ -2,11 +2,13 @@
 # gulp (https://aur.archlinux.org/packages/code/)
 - name: ulimit (damn gulp)
   command: ulimit -n 65535
+  tags: aur
 
 - name: Install vscode
   aur: name=code use=yay skip_installed=yes
   become: yes
   become_user: aur
+  tags: aur
 
 - name: Install vscode extensions
   command: code-oss --install-extension {{item}} 
@@ -26,8 +28,10 @@
   - vscodevim.vim
   - wayou.vscode-todo-highlight
   - robertohuertasm.vscode-icons
+  tags: aur
 
 - name: Copy vscode configuration
   copy:
     src: /tmp/dotfiles/.config/Code - OSS
     dest: /home/{{ user_name }}/.config/Code - OSS
+  tags: aur

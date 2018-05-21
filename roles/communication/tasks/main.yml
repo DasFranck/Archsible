@@ -10,3 +10,4 @@
     - discord
   become: yes
   become_user: aur
+  tags: aur

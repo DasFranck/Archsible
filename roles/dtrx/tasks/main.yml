@@ -3,6 +3,7 @@
   aur: name=dtrx skip_installed=yes
   become: yes
   become_user: aur
+  tags: aur
 
 - name: Install optionnal dependencies 
   pacman: name={{ item }} state=present
@@ -13,3 +14,4 @@
   - unrar
   - gzip
   - bzip2
+  tags: aur #Tagged as aur because it's pointless without previous step
