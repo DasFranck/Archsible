@@ -8,12 +8,15 @@
     - compton
     - feh
     - rofi
-#    - i3lock/slimlock
+
+# Broken: https://github.com/ansible/ansible/issues/36585
+##- name: Enable lightdm
+##  service:
+##    name: lightdm
+##    enabled: yes
 
 - name: Enable lightdm
-  service:
-    name: lightdm
-    enabled: yes
+  shell: systemctl enable lightdm
 
 - name: Install polybar and lightdm theme from AUR
   aur: name={{ item }} use=yay skip_installed=yes
