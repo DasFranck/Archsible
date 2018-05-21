@@ -10,3 +10,7 @@ ansible-playbook -v ./playbook.yml -i ./localhost --skip-tags "laptop"
 
 # Launch ansible playbook for desktop without aur
 ansible-playbook -v ./playbook.yml -i ./localhost --skip-tags "laptop,aur" 
+
+Tags:
+- laptop
+- aur

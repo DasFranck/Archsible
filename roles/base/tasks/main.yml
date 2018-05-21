@@ -41,11 +41,12 @@
     - sudo
     - openssh
     - openvpn
-
-- name: Install acpi and networkmanager if laptop tag
-  pacman: name={{ item }} state=present
-  with_items:
-    - acpi
     - networkmanager
     - networkmanager-openvpn
+
+- name: Install acpi if laptop tag
+  pacman: name=acpi state=present
   tags: laptop
+
+- name: Enable NetworkManager
+  shell: systemctl enable NetworkManager
