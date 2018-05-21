@@ -8,6 +8,7 @@
     - compton
     - feh
     - rofi
+    - light-locker
 
 # Broken: https://github.com/ansible/ansible/issues/36585
 ##- name: Enable lightdm
@@ -40,21 +41,6 @@
     src: /tmp/dotfiles/etc/lightdm/lightdm-webkit2-greeter.conf
     dest: /etc/lightdm/lightdm-webkit2-greeter.conf
 
-- name: pacman -Syu
-  pacman:
-    update_cache: yes
-    upgrade: yes
-
-- name: Install zsh, man, htop, curl, tmux, vim, which, openssh and tar
-  pacman: name={{ item }} state=present
-  with_items:
-    - base
-    - htop
-    - curl
-    - vim
-    - sudo
-    - openssh
-
 - name: Create /home/{{ user_name }}/.local/share/fonts/
   file:
     path: /home/{{ user_name }}/.local/share/fonts/
@@ -66,14 +52,15 @@
     url: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Meslo/M-DZ/complete/Meslo%20LG%20M%20DZ%20Regular%20Nerd%20Font%20Complete%20Mono.otf
     dest: /home/{{ user_name }}/.local/share/fonts/MLG.otf
 
-#TODO CONFIG SDDM
+- name: Copy xprofile configuration
+  copy:
+    src: /tmp/dotfiles/.xprofile
+    dest: /home/{{ user_name }}/.xprofile
 
 - name: Copy i3 configuration
   copy:
     src: /tmp/dotfiles/.i3
     dest: /home/{{ user_name }}/.i3
-
-#TODO CONFIG SLIMLOCK
 
 - name: Copy conky configuration
   copy:
