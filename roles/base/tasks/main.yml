@@ -16,11 +16,11 @@
     regexp: ^#Server
     replace: Server
 
-- name: Includ multilib pacman repository
+- name: Include multilib pacman repository
   replace:
     path: /etc/pacman.conf
     regexp: '#\[multilib\]\n#(Include.+)'
-    replace: '\[multilib\]\n\1'
+    replace: '[multilib]\n\1'
     backup: yes
 
 - name: Rank pacman's mirrors
