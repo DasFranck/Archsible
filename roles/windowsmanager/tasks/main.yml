@@ -53,3 +53,9 @@
     create: yes
     path: /home/{{ user_name }}/.config/rofi/config
     line: "rofi.theme: /usr/share/rofi/themes/sidebar.rasi"
+
+- name: Set .xinitrc to i3
+  lineinfile:
+    create: yes
+    path: /home/{{ user_name }}/.xinitrc
+    line: "exec i3"
