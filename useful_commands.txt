@@ -1,3 +1,12 @@
 # Set firefox as the default browser even when $BROWSER don't seem to work:
 xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop x-scheme-handler/https
+
+# Launch ansible playbook for laptop
+ansible-playbook -v ./playbook.yml -i ./localhost
+
+# Launch ansible playbook for desktop
+ansible-playbook -v ./playbook.yml -i ./localhost --skip-tags "laptop"
+
+# Launch ansible playbook for desktop without aur
+ansible-playbook -v ./playbook.yml -i ./localhost --skip-tags "laptop,aur" 

@@ -40,3 +40,7 @@
     - vim
     - sudo
     - openssh
+
+- name: Install acpi if laptop tag
+  pacman: name=acpi state=present
+  tags: laptop
