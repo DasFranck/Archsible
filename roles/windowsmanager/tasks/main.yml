@@ -9,7 +9,12 @@
     - feh
     - rofi
     - light-locker
+
+- name: Install packages from official repos
+  pacman: name={{ item }} state=present
+  with_items:
     - network-manager-applet
+  tags: laptop
 
 # Broken: https://github.com/ansible/ansible/issues/36585
 ##- name: Enable lightdm
