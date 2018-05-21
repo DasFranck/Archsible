@@ -24,6 +24,39 @@
   become_user: aur
   tags: aur
 
+- name: Set lightdm greeter to webkit2
+  replace:
+    path: /etc/lightdm/lightdm.conf
+    regexp: '#greeter-session=.*$'
+    replace: 'greeter-session=lightdm-webkit2-greeter'
+    after: '\[Seat:\*\]'
+    backup: yes
+
+- name: Set lightdm greeter theme to litarvan
+  replace:
+    path: /etc/lightdm/lightdm-webkit2-greeter.conf
+    regexp: 'webkit_theme.*=.+$'
+    replace: 'webkit_theme=litarvan'
+    backup: yes
+
+- name: Rank pacman's mirrors
+  shell: rankmirrors /etc/pacman.d/mirrorlist.ansible > /etc/pacman.d/mirrorlist
+
+- name: pacman -Syu
+  pacman:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install zsh, man, htop, curl, tmux, vim, which, openssh and tar
+  pacman: name={{ item }} state=present
+  with_items:
+    - base
+    - htop
+    - curl
+    - vim
+    - sudo
+    - openssh
+
 - name: Create /home/{{ user_name }}/.local/share/fonts/
   file:
     path: /home/{{ user_name }}/.local/share/fonts/
