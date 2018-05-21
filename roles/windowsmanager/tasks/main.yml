@@ -9,6 +9,7 @@
     - feh
     - rofi
     - light-locker
+    - network-manager-applet
 
 # Broken: https://github.com/ansible/ansible/issues/36585
 ##- name: Enable lightdm
