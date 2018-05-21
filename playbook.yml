@@ -12,8 +12,11 @@
     - { role: python, tags: ['python'] }
     - { role: vim, tags: ['vim'] } #Deps: dotfiles, useradd, python
     - { role: windowsmanager, tags: ['windowsmanager'] } #Deps: dotfiles, useradd
-#    - { role: docker, tags: ['docker'] }
-#    - { role: extra, tags: ['extra'] }
+    - { role: apps, tags: ['apps'] }
+    - { role: communication, tags: ['communication'] }
+    - { role: docker, tags: ['docker'] }
+    - { role: games, tags: ['games'] }
+    - { role: media, tags: ['media'] }
 #    - { role: vscode, tags: ['vscode']} #Deps: yay, dotfiles, useradd
   vars_prompt:
     - name: user_name
