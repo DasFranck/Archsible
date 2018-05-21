@@ -40,9 +40,6 @@
     src: /tmp/dotfiles/etc/lightdm/lightdm-webkit2-greeter.conf
     dest: /etc/lightdm/lightdm-webkit2-greeter.conf
 
-- name: Rank pacman's mirrors
-  shell: rankmirrors /etc/pacman.d/mirrorlist.ansible > /etc/pacman.d/mirrorlist
-
 - name: pacman -Syu
   pacman:
     update_cache: yes
