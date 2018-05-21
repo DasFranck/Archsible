@@ -1,0 +1,12 @@
+---
+- name: Install docker
+  pacman: name={{ item }} state=present
+  with_items:
+    - docker
+
+- name: Install ctop from AUR
+  aur: name={{ item }} use=yay skip_installed=yes
+  with_items:
+    - ctop
+  become: yes
+  become_user: aur
