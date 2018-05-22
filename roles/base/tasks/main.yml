@@ -16,6 +16,12 @@
     regexp: ^#Server
     replace: Server
 
+- name: Uncomment mirrors
+  replace:
+    path: /etc/pacman.conf
+    regexp: ^#Color$
+    replace: Color
+
 - name: Include multilib pacman repository
   replace:
     path: /etc/pacman.conf

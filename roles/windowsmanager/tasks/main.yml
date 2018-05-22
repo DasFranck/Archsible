@@ -2,6 +2,9 @@
 - name: Install packages from official repos
   pacman: name={{ item }} state=present
   with_items:
+    - xorg-server
+    - xorg-xbacklight
+    - xf86-video-intel
     - lightdm
     - i3-gaps
     - conky
