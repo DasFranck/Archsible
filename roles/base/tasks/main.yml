@@ -16,7 +16,7 @@
     regexp: ^#Server
     replace: Server
 
-- name: Uncomment mirrors
+- name: Enable color option for pacman
   replace:
     path: /etc/pacman.conf
     regexp: ^#Color$

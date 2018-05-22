@@ -12,3 +12,26 @@
     ssh_key_bits: 2048
     ssh_key_file: .ssh/id_rsa
     password: "{{ user_password }}"
+
+- name: Backup sudoers file
+  copy:
+    src: /etc/sudoers
+    dest: /etc/sudoers.bak
+
+- name: Copy sudoers in /tmp in order to work on it
+  copy:
+    src: /etc/sudoers
+    dest: /tmp/sudoers.tmp
+
+- name: Uncomment wheel in sudoers file
+  replace:
+    path: /tmp/sudoers.tmp
+    regexp: "#%wheel ALL=(ALL) ALL$"
+    replace: "wheel ALL=(ALL) ALL"
+
+- name: Final sudoers file check
+  shell: visudo -q -c -f /tmp/sudoers.tmp
+
+- name: Replace old sudoers file
+    src: /etc/sudoers.bak
+    dest: /etc/sudoers
