@@ -2,6 +2,9 @@
 xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop x-scheme-handler/https
 
+# Pulseaudio being... well pulseaudio. (Took me 3 weeks for this... I hate PA)
+rm -f /etc/systemd/user/sockets.target.wants/pulseaudio.socket
+
 # Launch ansible playbook for laptop
 ansible-playbook -v ./playbook.yml -i ./localhost
 
