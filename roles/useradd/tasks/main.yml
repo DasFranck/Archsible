@@ -33,5 +33,6 @@
   shell: visudo -q -c -f /tmp/sudoers.tmp
 
 - name: Replace old sudoers file
+  copy:
     src: /etc/sudoers.bak
     dest: /etc/sudoers
