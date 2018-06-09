@@ -19,8 +19,8 @@ use_cmd = {
     'trizen': ['trizen', '-S', '--noconfirm', '--noedit', '--needed', '--aur'],
     'pikaur': ['pikaur', '-S', '--noconfirm', '--noedit', '--needed'],
     'yaourt': ['yaourt', '-S', '--noconfirm', '--needed'],
-    'yay': ['yay', '-S', '--noconfirm'],
-    'internal': ['makepkg', '--syncdeps', '--install', '--noconfirm', '--needed']
+    'yay': ['yay', '-S', '--noconfirm', '--noprovides', '--mflags', '--nocheck'],
+    'internal': ['makepkg', '--syncdeps', '--install', '--noconfirm', '--nocheck', '--needed']
 }
 
 
