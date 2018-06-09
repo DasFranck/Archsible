@@ -64,5 +64,11 @@
   pacman: name=acpi state=present
   tags: laptop
 
+- name: Reload systemd daemons
+  systemd:
+    daemon-reload: yes
+
 - name: Enable NetworkManager
-  shell: systemctl enable NetworkManager
+  systemd:
+      enabled: yes
+      name: NetworkManager
