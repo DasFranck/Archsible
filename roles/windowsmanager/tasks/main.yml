@@ -18,11 +18,14 @@
     - light-locker
     - network-manager-applet
 
-# Broken: https://github.com/ansible/ansible/issues/36585
-##- name: Enable lightdm
-##  service:
-##    name: lightdm
-##    enabled: yes
+- name: Reload systemd daemons
+  systemd:
+    daemon-reload: yes
+
+- name: Enable lightdm
+  systemd:
+    name: lightdm
+    enabled: yes
 
 - name: Enable lightdm
   shell: systemctl enable lightdm
