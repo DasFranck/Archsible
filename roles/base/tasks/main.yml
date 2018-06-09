@@ -1,10 +1,13 @@
 ---
 - name: Install rankmirrors
   pacman:
-    name: pacman-contrib
+    name: "{{ item }}"
     state: present
     update_cache: yes
     upgrade: yes
+  with_items:
+    - pacman-mirrorlist
+    - pacman-contrib
 
 - name: Backup pacman's mirrorlist
   copy:
