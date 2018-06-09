@@ -1,13 +1,10 @@
 ---
 - name: Install rankmirrors
   pacman:
-    name: "{{ item }}"
+    name: pacman-contrib
     state: present
     update_cache: yes
     upgrade: yes
-  with_items:
-    - pacman-mirrorlist
-    - pacman-contrib
 
 - name: Backup pacman's mirrorlist
   copy:
@@ -40,7 +37,7 @@
     backup: yes
 
 - name: Rank pacman's mirrors
-  shell: rankmirrors /etc/pacman.d/mirrorlist.ansible > /etc/pacman.d/mirrorlist
+  shell: /usr/bin/rankmirrors /etc/pacman.d/mirrorlist.ansible > /etc/pacman.d/mirrorlist
 
 - name: pacman -Syu
   pacman:
