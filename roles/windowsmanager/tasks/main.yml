@@ -5,6 +5,10 @@
     - xorg-server
     - xorg-xbacklight
     - xf86-video-intel
+    - ttf-dejavu
+    - ttf-freefont
+    - ttf-roboto
+    - noto-fonts
     - lightdm
     - i3-gaps
     - conky
@@ -24,7 +28,7 @@
   shell: systemctl enable lightdm
 
 - name: Install polybar and lightdm theme from AUR
-  aur: name={{ item }} use=yay skip_installed=yes
+  aur: name={{ item }} skip_installed=yes
   with_items:
     - polybar
     - lightdm-webkit-theme-litarvan
@@ -63,8 +67,8 @@
 
 - name: Copy i3 configuration
   copy:
-    src: /tmp/dotfiles/.i3
-    dest: /home/{{ user_name }}/.i3
+    src: /tmp/dotfiles/.i3/
+    dest: /home/{{ user_name }}/
 
 - name: Copy conky configuration
   copy:
@@ -74,7 +78,7 @@
 - name: Copy polybar configuration
   copy:
     src: /tmp/dotfiles/.config/polybar
-    dest: /home/{{ user_name }}/.config/polybar
+    dest: /home/{{ user_name }}/.config/
 
 - name: Set rofi theme to sidebar
   lineinfile:
