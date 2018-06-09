@@ -11,7 +11,7 @@
   tags: aur
 
 - name: Install vscode extensions
-  command: code-oss --install-extension {{item}} 
+  command: code-oss --install-extension {{item}}
   become: yes
   become_user: "{{ user_name }}"
   with_items:

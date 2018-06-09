@@ -12,7 +12,7 @@
   git:
     repo: 'https://github.com/Jguer/yay'
     dest: /tmp/yay_build
-  
+
 - name: "Make yay"
   make:
     chdir: /tmp/yay_build

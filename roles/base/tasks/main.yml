@@ -6,7 +6,7 @@
 
 - name: Install rankmirrors
   pacman:
-    name: pacman-contrib 
+    name: pacman-contrib
     state: present
 
 - name: Backup pacman's mirrorlist
