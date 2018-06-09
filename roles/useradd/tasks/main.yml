@@ -26,7 +26,7 @@
 - name: Uncomment wheel in sudoers file
   replace:
     path: /tmp/sudoers.tmp
-    regexp: "# *%wheel ALL=\(ALL\) ALL$"
+    regexp: '# *%wheel ALL=\(ALL\) ALL$'
     replace: "wheel ALL=(ALL) ALL"
 
 - name: Final sudoers file check
