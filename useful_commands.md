@@ -14,6 +14,9 @@ ansible-playbook -v ./playbook.yml -i ./localhost --skip-tags "laptop"
 # Launch ansible playbook for desktop without aur
 ansible-playbook -v ./playbook.yml -i ./localhost --skip-tags "laptop,aur" 
 
+# For my home desktop with double screen
+xrandr --output HDMI-1 --left-of DVI-D-1
+
 Tags:
 - laptop
 - aur
