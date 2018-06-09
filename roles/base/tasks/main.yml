@@ -1,4 +1,11 @@
 ---
+- name: Install rankmirrors
+  pacman:
+    name: pacman-contrib
+    state: present
+    update_cache: yes
+    upgrade: yes
+
 - name: Backup pacman's mirrorlist
   copy:
     src: /etc/pacman.d/mirrorlist
