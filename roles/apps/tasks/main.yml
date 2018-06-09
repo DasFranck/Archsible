@@ -9,5 +9,12 @@
     - terminology
     - keepassx2
 
+- name: Reload systemd daemons
+  systemd:
+    daemon-reload: yes
+
 - name: Enable syncthing
-  shell: systemctl enable syncthing@{{ user_name }}
+  systemd:
+      enabled: yes
+      state: started
+      name: syncthing@{{ user_name }}
