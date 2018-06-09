@@ -27,9 +27,6 @@
     name: lightdm
     enabled: yes
 
-- name: Enable lightdm
-  shell: systemctl enable lightdm
-
 - name: Install polybar and lightdm theme from AUR
   aur: name={{ item }} skip_installed=yes
   with_items:
