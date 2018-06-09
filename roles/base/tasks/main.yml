@@ -1,10 +1,13 @@
 ---
-- name: Install rankmirrors
+- name: Synchronising package databases
   pacman:
-    name: pacman-contrib
-    state: present
     update_cache: yes
     upgrade: yes
+
+- name: Install rankmirrors
+  pacman:
+    name: pacman-contrib 
+    state: present
 
 - name: Backup pacman's mirrorlist
   copy:
