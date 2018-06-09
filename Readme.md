@@ -1,5 +1,5 @@
 # Archsible
-![Travis build status](https://travis-ci.org/DasFranck/Archsible.svg?branch=master)
+[![Travis Build Status](https://travis-ci.org/DasFranck/Archsible.svg?branch=master)](https://travis-ci.org/DasFranck/Archsible)
 
 This is an ansible deployment playbook used for setup my archlinux workstations.  
 This playbook is tested via Travis-CI using a docker container without aur flagged steps, the Dockerfile is in the travis folder.
