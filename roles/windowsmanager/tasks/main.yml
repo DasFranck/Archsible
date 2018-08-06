@@ -21,11 +21,15 @@
 - name: Reload systemd daemons
   systemd:
     daemon-reload: yes
+  tags:
+    - notravis
 
 - name: Enable lightdm
   systemd:
     name: lightdm
     enabled: yes
+  tags:
+    - notravis
 
 - name: Install polybar and lightdm theme from AUR
   aur: name={{ item }} skip_installed=yes

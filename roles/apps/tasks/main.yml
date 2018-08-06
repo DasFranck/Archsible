@@ -12,9 +12,13 @@
 - name: Reload systemd daemons
   systemd:
     daemon-reload: yes
+  tags:
+    - notravis
 
 - name: Enable syncthing
   systemd:
       enabled: yes
       state: started
       name: syncthing@{{ user_name }}
+  tags:
+    - notravis
