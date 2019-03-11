@@ -6,6 +6,7 @@
     - ncdu
     - tree
     - tmux
+    - lsd
     - neofetch
 
 - name: Copy git configuration
