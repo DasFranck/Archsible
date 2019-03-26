@@ -17,7 +17,7 @@
     - { role: docker, tags: ['docker'] } #Deps: yay
     - { role: games, tags: ['games'] }
     - { role: media, tags: ['media'] }
-    - { role: vscode, tags: ['vscode'] } #Deps: yay, dotfiles, useradd
+    - { role: vscode, tags: ['vscode'] } #Deps: dotfiles
   vars_prompt:
     - name: user_name
       prompt: "Enter desired user name"
