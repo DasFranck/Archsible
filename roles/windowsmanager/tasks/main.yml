@@ -86,8 +86,8 @@
 
 - name: Copy i3 configuration
   copy:
-    src: /tmp/dotfiles/.i3/config
-    dest: /home/{{ user_name }}/.config/.i3/config
+    src: /tmp/dotfiles/.i3/
+    dest: /home/{{ user_name }}/.config/.i3
 
 - name: Copy conky configuration
   copy:
