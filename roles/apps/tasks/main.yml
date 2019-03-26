@@ -6,7 +6,7 @@
     - thunderbird
     - syncthing
     - dolphin
-    - terminology
+    - termite
     - keepassx2
 
 - name: Reload systemd daemons
@@ -22,3 +22,13 @@
       name: syncthing@{{ user_name }}
   tags:
     - notravis
+
+- name: Copy termite configuration
+  copy:
+    src: /tmp/dotfiles/.config/termite
+    dest: /home/{{ user_name }}/.config/termite
+
+- name: Copy rofi configuration
+  copy:
+    src: /tmp/dotfiles/.config/rofi
+    dest: /home/{{ user_name }}/.config/rofi
