@@ -110,3 +110,12 @@
     create: yes
     path: /home/{{ user_name }}/.xinitrc
     line: "exec i3"
+
+- name: Install i3-scrot
+  aur:
+    name: i3-scrot
+    use: yay
+    skip_installed: yes
+  become: yes
+  become_user: aur
+  tags: aur
