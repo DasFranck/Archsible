@@ -1,6 +1,6 @@
 - name: Install some cli tools
   pacman:
-    name: {{ item }}
+    name: "{{ item }}"
   with_items:
     - links
     - ranger

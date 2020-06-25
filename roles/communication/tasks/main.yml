@@ -1,7 +1,7 @@
 ---
 - name: Install weechat, discord and its fonts
   pacman:
-    name: {{ item }}
+    name: "{{ item }}"
   with_items:
     - weechat
     - discord

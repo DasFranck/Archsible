@@ -1,7 +1,7 @@
 ---
 - name: Install some beloved apps
   pacman:
-    name: {{ item }}
+    name: "{{ item }}"
   with_items:
     - firefox
     - thunderbird
@@ -18,9 +18,9 @@
 
 - name: Enable syncthing
   systemd:
-      enabled: yes
-      state: started
-      name: syncthing@{{ user_name }}
+    enabled: yes
+    state: started
+    name: syncthing@{{ user_name }}
   tags:
     - notravis
 

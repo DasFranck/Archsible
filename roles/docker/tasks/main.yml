@@ -5,7 +5,7 @@
 
 - name: Install ctop from AUR
   aur:
-    name: {{ item }} 
+    name: "{{ item }}"
     use: yay
   with_items:
     - ctop

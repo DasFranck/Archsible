@@ -1,7 +1,7 @@
 ---
 - name: Install packages from official repos
   pacman:
-    name: {{ item }}
+    name: "{{ item }}"
   with_items:
     - xorg-server
     - xorg-xbacklight
@@ -34,7 +34,7 @@
 
 - name: Install polybar and lightdm theme from AUR
   aur:
-    name: {{ item }}
+    name: "{{ item }}"
   with_items:
     - polybar
     - lightdm-webkit-theme-litarvan

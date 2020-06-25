@@ -1,7 +1,7 @@
 ---
 - name: Install python 2 & 3 and their python-pip
   pacman: 
-    name: {{ item }}
+    name: "{{ item }}"
   with_items:
     - python
     - python-pip

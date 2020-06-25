@@ -1,7 +1,7 @@
 ---
 - name: Install vim and neovim
   pacman:
-    name: {{ item }}
+    name: "{{ item }}"
   with_items:
     - vim
     - neovim

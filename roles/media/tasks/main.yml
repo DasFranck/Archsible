@@ -1,7 +1,7 @@
 ---
 - name: Install several media applications
   pacman:
-    name: {{ item }}
+    name: "{{ item }}"
   with_items:
   - vlc
   - clementine
@@ -13,7 +13,7 @@
 
 - name: Install spotify from AUR
   aur:
-    name: {{ item }}
+    name: "{{ item }}"
     use: yay
   with_items:
     - spotify

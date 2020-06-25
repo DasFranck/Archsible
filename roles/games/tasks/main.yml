@@ -1,7 +1,7 @@
 ---
 - name: Install steam, playonlinux and wine
   pacman:
-    name: {{ item }}
+    name: "{{ item }}"
   with_items:
     - steam
     - steam-native-runtime

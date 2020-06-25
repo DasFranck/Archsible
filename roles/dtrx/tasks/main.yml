@@ -8,7 +8,7 @@
 
 - name: Install optionnal dependencies
   pacman:
-    name: {{ item }}
+    name: "{{ item }}"
   with_items:
   - p7zip
   - tar
