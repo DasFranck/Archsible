@@ -1,6 +1,6 @@
 ---
 - name: Install dtrx
-  aur: name=dtrx skip_installed=yes
+  aur: name=dtrx
   become: yes
   become_user: aur
   tags: aur

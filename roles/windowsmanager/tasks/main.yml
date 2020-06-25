@@ -32,7 +32,7 @@
     - notravis
 
 - name: Install polybar and lightdm theme from AUR
-  aur: name={{ item }} skip_installed=yes
+  aur: name={{ item }}
   with_items:
     - polybar
     - lightdm-webkit-theme-litarvan
@@ -115,7 +115,6 @@
   aur:
     name: i3-scrot
     use: yay
-    skip_installed: yes
   become: yes
   become_user: aur
   tags: aur
