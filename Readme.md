@@ -15,3 +15,20 @@ If you are looking for my dotfiles, [it's here](https://github.com/DasFranck/Das
 
 - Launch ansible playbook for desktop without aur  
 `ansible-playbook -v ./playbook.yml -i ./localhost --skip-tags "laptop,aur"` 
+
+### Quick start up ArchLinux
+The following procedure is intended for a VM but can be easily adapted for any plateform
+```sh
+# Insert Arch ISO and boot on it
+
+cfdisk /dev/sda
+
+mkfs.ext4 /dev/sda1
+mkfs.ext4 /dev/sda2
+
+mount /dev/sda2 /mnt
+mkdir /mnt/boot && mount /mnt/boot /dev/sda1
+
+pacstap base base-devel git vim ansible
+ansible-galaxy kewlfft.aur
+```
