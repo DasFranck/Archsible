@@ -1,6 +1,7 @@
 ---
 - name: "Install makepkg, git, gcc and go"
-  pacman: name={{item}} state=present
+  pacman:
+    name: {{item}}
   with_items:
     - make
     - git

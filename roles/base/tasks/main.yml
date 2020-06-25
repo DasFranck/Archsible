@@ -7,7 +7,6 @@
 - name: Install rankmirrors
   pacman:
     name: pacman-contrib
-    state: present
 
 - name: Backup pacman's mirrorlist
   copy:
@@ -48,7 +47,8 @@
     upgrade: yes
 
 - name: Install zsh, man, htop, curl, tmux, vim, which, openssh and tar
-  pacman: name={{ item }} state=present
+  pacman:
+    name: {{ item }}
   with_items:
     - base
     - htop
@@ -61,7 +61,8 @@
     - networkmanager-openvpn
 
 - name: Install acpi if laptop tag
-  pacman: name=acpi state=present
+  pacman:
+    name: acpi
   tags: laptop
 
 - name: Reload systemd daemons

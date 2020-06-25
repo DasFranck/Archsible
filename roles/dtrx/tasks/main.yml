@@ -1,12 +1,14 @@
 ---
 - name: Install dtrx
-  aur: name=dtrx
+  aur:
+    name: dtrx
   become: yes
   become_user: aur
   tags: aur
 
 - name: Install optionnal dependencies
-  pacman: name={{ item }} state=present
+  pacman:
+    name: {{ item }}
   with_items:
   - p7zip
   - tar

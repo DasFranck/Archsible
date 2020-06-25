@@ -1,5 +1,6 @@
 - name: Install some cli tools
-  pacman: name={{ item }} state=present
+  pacman:
+    name: {{ item }}
   with_items:
     - links
     - ranger

@@ -1,6 +1,7 @@
 ---
 - name: Install weechat, discord and its fonts
-  pacman: name={{ item }} state=present
+  pacman:
+    name: {{ item }}
   with_items:
     - weechat
     - discord

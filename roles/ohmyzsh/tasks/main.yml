@@ -1,6 +1,7 @@
 ---
 - name: Installing zsh and git
-  pacman: name={{ item }} state=present
+  pacman: 
+    name: {{ item }}
   with_items:
     - zsh
     - git

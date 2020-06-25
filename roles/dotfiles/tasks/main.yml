@@ -1,6 +1,7 @@
 ---
 - name: Install git
-  pacman: name=git state=present
+  pacman: 
+    name: git
 
 - name: Clone dotfiles
   git:
