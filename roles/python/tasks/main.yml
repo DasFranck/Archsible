@@ -1,20 +1,17 @@
 ---
-- name: Install python 3 and python-pip
-  pacman: name={{ item }} state=present
+- name: Install python 2 & 3 and their python-pip
+  pacman: 
+    name: {{ item }}
   with_items:
     - python
     - python-pip
-
-- name: Install python 2 and python-pip
-  pacman: name={{ item }} state=present
-  with_items:
     - python2
     - python2-pip
 
 - name: Install ipython, virtualenv and flake8
   pip:
     name: "{{ item }}"
-    executable: pip #Meant to be pip-3 on arch
+    executable: pip
   with_items:
     - ipython
     - virtualenv
