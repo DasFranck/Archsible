@@ -1,26 +1,7 @@
 ---
-- name: Install weechat
+- name: Install weechat, discord and its fonts
   pacman: name={{ item }} state=present
   with_items:
     - weechat
-
-- name: Install discord from AUR
-  aur: name={{ item }} use=yay
-  with_items:
     - discord
-  become: yes
-  become_user: aur
-  tags: aur
-
-- name: Install fonts for discord
-  pacman: name={{ item }} state=present
-  with_items:
     - noto-fonts-emoji
-
-- name: Install ttf-symbola for discord from AUR
-  aur: name={{ item }} use=yay
-  with_items:
-    - ttf-symbola
-  become: yes
-  become_user: aur
-  tags: aur
