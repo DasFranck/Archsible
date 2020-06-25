@@ -1,9 +1,4 @@
 ---
-# gulp (https://aur.archlinux.org/packages/code/)
-- name: ulimit (damn gulp)
-  command: ulimit -n 65535
-  tags: aur
-
 - name: Install vscode
   pacman:
     name: code 
@@ -27,10 +22,8 @@
   - vscodevim.vim
   - wayou.vscode-todo-highlight
   - robertohuertasm.vscode-icons
-  tags: aur
 
 - name: Copy vscode configuration
   copy:
     src: /tmp/dotfiles/.config/Code - OSS
     dest: /home/{{ user_name }}/.config/Code - OSS
-  tags: aur
