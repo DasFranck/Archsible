@@ -23,6 +23,8 @@ The following procedure is intended for a VM but can be easily adapted for any p
 
 cfdisk /dev/sda
 
+parted /dev/sda set 1 bios_grub on
+
 mkfs.ext4 /dev/sda1
 mkfs.ext4 /dev/sda2
 

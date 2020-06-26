@@ -21,9 +21,12 @@
 - name: Initialize ramdisk environment
   command: mkinitcpio -p linux
 
-- name: Install grub
+- name: Install grub package
   pacman:
     name: grub
+
+- name: Install grub on disk
+  command: grub-install /dev/sda
 
 - name: Config grub
   command: grub-mkconfig -o /boot/grub/grub.cfg
