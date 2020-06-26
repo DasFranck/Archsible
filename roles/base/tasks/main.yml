@@ -51,6 +51,7 @@
     name: "{{ item }}"
   with_items:
     - base
+    - linux
     - htop
     - curl
     - vim
