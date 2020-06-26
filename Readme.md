@@ -29,6 +29,10 @@ mkfs.ext4 /dev/sda2
 mount /dev/sda2 /mnt
 mkdir /mnt/boot && mount /mnt/boot /dev/sda1
 
-pacstap base base-devel git vim ansible
-ansible-galaxy kewlfft.aur
+pacstap /mnt base git ansible
+arch-chroot /mnt
+    ansible-galaxy kewlfft.aur
+    git clone https://github.com/dasfranck/archsible
+    cd archsible
+    ansible-playbook -v ./playbook.yml -i ./localhost
 ```
