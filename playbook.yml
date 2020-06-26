@@ -2,6 +2,7 @@
 - hosts: localhost
   become: yes
   roles:
+    - { role: bootstrap, tags: ['bootstrap'] }
     - { role: base, tags: ['base'] }
     - { role: yay, tags: ['yay'] }
     - { role: useradd, tags: ['useradd'] }

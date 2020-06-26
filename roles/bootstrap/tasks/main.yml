@@ -1,0 +1,24 @@
+---
+- name: Setting up hostname
+  hostname:
+    name: "{{ hostname }}"
+
+- name: Setting up needed locale
+  locale_gen:
+    name: "{{ locale_name }}"
+
+- name: Setting up vconsole.conf
+  lineinfile:
+    path: /etc/vconsole.conf
+    regexp: "^KEYMAP="
+    line: "KEYMAP={{ keymap }}"
+
+- name: Initialize ramdisk environment
+  command: mkinitcpio -p linux
+
+- name: Install grub
+  pacman:
+    name: grub
+
+- name: Config grub
+  command: grub-mkconfig -o /boot/grub/grub.cfg
