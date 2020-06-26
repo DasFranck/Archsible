@@ -23,11 +23,12 @@
     - name: user_name
       prompt: "Enter desired user name"
       private: no
+    - name: hostname 
+      prompt: "Enter desired hostname"
+      private: no
     - name: user_password
       prompt: "Enter desired user password"
       private: yes
       confirm: yes
       salt_size: 7
       encrypt: "sha512_crypt"
-
-#TODO: Put deps in roles' metadata

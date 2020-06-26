@@ -1,2 +1,2 @@
 [localhost]
-localhost ansible_connection=local
+localhost ansible_connection=local keymap=uk local_name=en_GB.UTF-8

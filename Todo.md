@@ -4,3 +4,5 @@ Lint
 
 Maybe use only symlinks for user config files
 Pulseaudio
+
+Add Ansible role dependencies in their meta/main.yml
