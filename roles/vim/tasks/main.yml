@@ -1,10 +1,11 @@
 ---
-- name: Install vim and neovim
+- name: Install vim, neovim and pynvim
   pacman:
     name: "{{ item }}"
   with_items:
     - vim
     - neovim
+    - python-pynvim
 
 - name: Create the directory for neovim's vim-plug
   file:
@@ -20,11 +21,3 @@
   copy:
     src: /tmp/dotfiles/.config/nvim/init.vim
     dest: /home/{{ user_name }}/.config/nvim/init.vim
-
-- name: Install python-neovim and python-jedi
-  pip:
-    name: "{{ item }}"
-    executable: pip #Meant to be pip-3 on arch
-  with_items:
-    - neovim
-    - jedi
