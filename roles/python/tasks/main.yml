@@ -7,8 +7,10 @@
     - python-pip
     - python2
     - python2-pip
+    - ipython
+    - python-virtualenv
 
-- name: Install ipython, virtualenv and flake8
+- name: Install ipython, virtualenv and flake8 as {{ user_name }} 
   pip:
     name: "{{ item }}"
     executable: pip
@@ -16,3 +18,5 @@
     - ipython
     - virtualenv
     - flake8
+  become: yes
+  become_user: "{{ user_name }}" 
