@@ -14,8 +14,12 @@
   copy:
     src: /tmp/dotfiles/.gitconfig
     dest: /home/{{ user_name }}/.gitconfig
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Copy tmux configuration
   copy:
     src: /tmp/dotfiles/.tmux.conf
     dest: /home/{{ user_name }}/.tmux.conf
+  become: yes
+  become_user: "{{ user_name }}"

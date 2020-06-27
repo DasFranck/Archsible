@@ -60,58 +60,80 @@
     path: /home/{{ user_name }}/.local/share/fonts/
     state: directory
     mode: 0755
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Get Meslo LG M DZ Mono font
   get_url:
     url: https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M-DZ/Regular/complete/Meslo%20LG%20M%20DZ%20Regular%20Nerd%20Font%20Complete%20Mono.ttf?raw=true
     dest: /home/{{ user_name }}/.local/share/fonts/MLG.ttf
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Get Meslo LG M DZ Mono bold font
   get_url:
     url: https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M-DZ/Bold/complete/Meslo%20LG%20M%20DZ%20Bold%20Nerd%20Font%20Complete%20Mono.ttf?raw=true
     dest: /home/{{ user_name }}/.local/share/fonts/MLG-bold.ttf
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Get Meslo LG M DZ Mono italic font
   get_url:
     url: https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M-DZ/Italic/complete/Meslo%20LG%20M%20DZ%20Italic%20Nerd%20Font%20Complete%20Mono.ttf?raw=true
     dest: /home/{{ user_name }}/.local/share/fonts/MLG-italic.ttf
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Get Meslo LG M DZ Mono bold italic font
   get_url:
     url: https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M-DZ/Bold-Italic/complete/Meslo%20LG%20M%20DZ%20Bold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf?raw=true
     dest: /home/{{ user_name }}/.local/share/fonts/MLG-bold-italic.ttf
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Copy xprofile configuration
   copy:
     src: /tmp/dotfiles/.xprofile
     dest: /home/{{ user_name }}/.xprofile
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Copy i3 configuration
   copy:
     src: /tmp/dotfiles/.i3/
     dest: /home/{{ user_name }}/.config/.i3
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Copy conky configuration
   copy:
     src: /tmp/dotfiles/.conkyrc
     dest: /home/{{ user_name }}/.conkyrc
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Copy polybar configuration
   copy:
     src: /tmp/dotfiles/.config/polybar
     dest: /home/{{ user_name }}/.config/
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Set rofi theme to sidebar
   lineinfile:
     create: yes
     path: /home/{{ user_name }}/.config/rofi/config
     line: "rofi.theme: /usr/share/rofi/themes/sidebar.rasi"
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Set .xinitrc to i3
   lineinfile:
     create: yes
     path: /home/{{ user_name }}/.xinitrc
     line: "exec i3"
+  become: yes
+  become_user: "{{ user_name }}"
 
 - name: Install i3-scrot
   aur:
