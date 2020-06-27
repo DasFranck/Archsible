@@ -8,7 +8,7 @@
     - syncthing
     - dolphin
     - termite
-    - keepassx
+    - keepass
 
 - name: Reload systemd daemons
   systemd:
