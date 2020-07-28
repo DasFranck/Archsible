@@ -26,6 +26,6 @@
   copy:
     src: /tmp/dotfiles/.zshrc
     dest: /home/{{ user_name }}/.zshrc
+    owner: "{{ user_name }}"
+    group: users
   when: 'cloning is success'
-  become: yes
-  become_user: "{{ user_name }}"

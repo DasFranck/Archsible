@@ -28,12 +28,12 @@
   copy:
     src: /tmp/dotfiles/.config/termite
     dest: /home/{{ user_name }}/.config/termite
-  become: yes
-  become_user: "{{ user_name }}"
+    owner: "{{ user_name }}"
+    group: users
 
 - name: Copy rofi configuration
   copy:
     src: /tmp/dotfiles/.config/rofi
     dest: /home/{{ user_name }}/.config/rofi
-  become: yes
-  become_user: "{{ user_name }}"
+    owner: "{{ user_name }}"
+    group: users
