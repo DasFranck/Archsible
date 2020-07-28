@@ -2,7 +2,6 @@
 - name: Install vscode
   pacman:
     name: code 
-    state: present
 
 - name: Install vscode extensions
   command: code-oss --install-extension {{item}}
@@ -27,3 +26,5 @@
   copy:
     src: /tmp/dotfiles/.config/Code - OSS
     dest: /home/{{ user_name }}/.config/Code - OSS
+    owner: "{{ user_name }}"
+    group: users

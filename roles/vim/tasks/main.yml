@@ -11,13 +11,19 @@
   file:
     path: /home/{{ user_name }}/.config/nvim/autoload/
     state: directory
+    owner: "{{ user_name }}"
+    group: users
 
 - name: Install vim-plug for neovim
   get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     dest: /home/{{ user_name }}/.config/nvim/autoload/plug.vim
+    owner: "{{ user_name }}"
+    group: users
 
 - name: Copy init.vim
   copy:
     src: /tmp/dotfiles/.config/nvim/init.vim
     dest: /home/{{ user_name }}/.config/nvim/init.vim
+    owner: "{{ user_name }}"
+    group: users

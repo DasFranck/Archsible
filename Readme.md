@@ -33,7 +33,7 @@ mkdir /mnt/boot && mount /mnt/boot /dev/sda1
 
 pacstap /mnt base git ansible
 arch-chroot /mnt
-    ansible-galaxy kewlfft.aur
+    ansible-galaxy install kewlfft.aur
     git clone https://github.com/dasfranck/archsible
     cd archsible
     ansible-playbook -v ./playbook.yml -i ./localhost
