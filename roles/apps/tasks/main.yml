@@ -1,14 +1,13 @@
 ---
 - name: Install some beloved apps
   pacman:
-    name: "{{ item }}"
-  with_items:
-    - firefox
-    - thunderbird
-    - syncthing
-    - dolphin
-    - termite
-    - keepass
+    name:
+      - firefox
+      - thunderbird
+      - syncthing
+      - dolphin
+      - termite
+      - keepass
 
 - name: Reload systemd daemons
   systemd:

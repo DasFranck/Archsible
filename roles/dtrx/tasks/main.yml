@@ -8,12 +8,11 @@
 
 - name: Install optionnal dependencies
   pacman:
-    name: "{{ item }}"
-  with_items:
-  - p7zip
-  - tar
-  - unzip
-  - unrar
-  - gzip
-  - bzip2
+    name:
+      - p7zip
+      - tar
+      - unzip
+      - unrar
+      - gzip
+      - bzip2
   tags: aur #Tagged as aur because it's pointless without previous step

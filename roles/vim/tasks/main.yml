@@ -1,11 +1,10 @@
 ---
 - name: Install vim, neovim and pynvim
   pacman:
-    name: "{{ item }}"
-  with_items:
-    - vim
-    - neovim
-    - python-pynvim
+    name:
+      - vim
+      - neovim
+      - python-pynvim
 
 - name: Create the directory for neovim's vim-plug
   file:

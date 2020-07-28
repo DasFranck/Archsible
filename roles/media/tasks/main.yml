@@ -1,15 +1,14 @@
 ---
 - name: Install several media applications
   pacman:
-    name: "{{ item }}"
-  with_items:
-  - vlc
-  - clementine
-  - audacity
-  - libreoffice-fresh
-  - digikam
-  - hugin
-  - pavucontrol
+    name:
+      - vlc
+      - clementine
+      - audacity
+      - libreoffice-fresh
+      - digikam
+      - hugin
+      - pavucontrol
 
 - name: Install spotify from AUR
   aur:

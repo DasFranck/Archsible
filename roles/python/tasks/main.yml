@@ -1,14 +1,13 @@
 ---
 - name: Install python 2 & 3 and their python-pip
   pacman: 
-    name: "{{ item }}"
-  with_items:
-    - python
-    - python-pip
-    - python2
-    - python2-pip
-    - ipython
-    - python-virtualenv
+    name:
+      - python
+      - python-pip
+      - python2
+      - python2-pip
+      - ipython
+      - python-virtualenv
 
 - name: Install ipython, virtualenv and flake8 as {{ user_name }} 
   pip:

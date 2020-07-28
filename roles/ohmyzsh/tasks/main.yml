@@ -1,10 +1,9 @@
 ---
 - name: Installing zsh and git
   pacman: 
-    name: "{{ item }}"
-  with_items:
-    - zsh
-    - git
+    name:
+      - zsh
+      - git
   register: installation
 
 - name: Backing up existing ~/.zshrc

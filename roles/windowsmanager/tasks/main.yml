@@ -1,24 +1,23 @@
 ---
 - name: Install packages from official repos
   pacman:
-    name: "{{ item }}"
-  with_items:
-    - xorg-server
-    - xorg-xbacklight
-    - xf86-video-intel
-    - ttf-dejavu
-    - ttf-freefont
-    - ttf-roboto
-    - noto-fonts
-    - lightdm
-    - i3-gaps
-    - conky
-    - compton
-    - feh
-    - rofi
-    - light-locker
-    - network-manager-applet
-    - lightdm-webkit-theme-litarvan
+    name:
+      - xorg-server
+      - xorg-xbacklight
+      - xf86-video-intel
+      - ttf-dejavu
+      - ttf-freefont
+      - ttf-roboto
+      - noto-fonts
+      - lightdm
+      - i3-gaps
+      - conky
+      - compton
+      - feh
+      - rofi
+      - light-locker
+      - network-manager-applet
+      - lightdm-webkit-theme-litarvan
 
 - name: Reload systemd daemons
   systemd:

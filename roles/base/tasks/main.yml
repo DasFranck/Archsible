@@ -48,18 +48,17 @@
 
 - name: Install zsh, man, htop, curl, tmux, vim, which, openssh and tar
   pacman:
-    name: "{{ item }}"
-  with_items:
-    - base
-    - linux
-    - htop
-    - curl
-    - vim
-    - sudo
-    - openssh
-    - openvpn
-    - networkmanager
-    - networkmanager-openvpn
+    name:
+      - base
+      - linux
+      - htop
+      - curl
+      - vim
+      - sudo
+      - openssh
+      - openvpn
+      - networkmanager
+      - networkmanager-openvpn
 
 - name: Install acpi if laptop tag
   pacman:

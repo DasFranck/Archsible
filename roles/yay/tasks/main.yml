@@ -1,13 +1,12 @@
 ---
 - name: "Install makepkg, git, gcc and go"
   pacman:
-    name: "{{item}}"
-  with_items:
-    - make
-    - git
-    - go
-    - gcc
-    - base-devel
+    name:
+      - make
+      - git
+      - go
+      - gcc
+      - base-devel
 
 - name: "Clone yay"
   git:

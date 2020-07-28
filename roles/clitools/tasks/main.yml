@@ -1,14 +1,13 @@
 - name: Install some cli tools
   pacman:
-    name: "{{ item }}"
-  with_items:
-    - links
-    - ranger
-    - ncdu
-    - tree
-    - tmux
-    - lsd
-    - neofetch
+    name:
+      - links
+      - ranger
+      - ncdu
+      - tree
+      - tmux
+      - lsd
+      - neofetch
 
 - name: Copy git configuration
   copy:

@@ -1,8 +1,7 @@
 ---
 - name: Install weechat, discord and its fonts
   pacman:
-    name: "{{ item }}"
-  with_items:
-    - weechat
-    - discord
-    - noto-fonts-emoji
+    name:
+      - weechat
+      - discord
+      - noto-fonts-emoji
