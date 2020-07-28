@@ -20,7 +20,7 @@
   - ms-python.python
   - vscodevim.vim
   - wayou.vscode-todo-highlight
-  - robertohuertasm.vscode-icons
+  - vscode-icons
 
 - name: Copy vscode configuration
   copy:
