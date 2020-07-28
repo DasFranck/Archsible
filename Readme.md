@@ -29,7 +29,7 @@ mkfs.ext4 /dev/sda1
 mkfs.ext4 /dev/sda2
 
 mount /dev/sda2 /mnt
-mkdir /mnt/boot && mount /mnt/boot /dev/sda1
+mkdir /mnt/boot && mount /dev/sda1 /mnt/boot
 
 pacstap /mnt base git ansible
 arch-chroot /mnt
