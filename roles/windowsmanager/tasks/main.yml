@@ -18,6 +18,7 @@
       - light-locker
       - network-manager-applet
       - lightdm-webkit-theme-litarvan
+      - scrot
 
 - name: Reload systemd daemons
   systemd:
@@ -139,11 +140,3 @@
     line: "exec i3"
     owner: "{{ user_name }}"
     group: users
-
-- name: Install i3-scrot
-  aur:
-    name: i3-scrot
-    use: yay
-  become: yes
-  become_user: aur
-  tags: aur
